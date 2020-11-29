@@ -15,9 +15,6 @@ user_pref("gfx.webrender.all", false);
 // change sync interval
 user_pref("services.sync.syncInterval", 60000); // default: 600000ms(10min)
 
-// disable smooth scroll
-user_pref("general.smoothScroll.mouseWheel", false);
-
 // enable color management
 // https://developer.mozilla.org/ja/docs/Mozilla/Firefox/Releases/3.5/ICC_color_correction_in_Firefox
 user_pref("gfx.color_management.mode", 2);
@@ -32,11 +29,6 @@ user_pref("gfx.color_management.enablev4", true);
 user_pref("media.hardware-video-decoding.force-enabled", true); // defalut: false
 user_pref("media.wmf.vp9.enabled", true); // default: false trueでは↓が3になってしまう
 user_pref("gfx.crash-guard.status.wmfvpxvideo", 0); // クラッシュガードが無効化～はこれが3の場合
-
-// font
-user_pref("font.name.monospace.ja", "Consolas");
-user_pref("font.name.sans-serif.ja", "BIZ UDPゴシック");
-user_pref("font.name.serif.ja", "BIZ UDP明朝");
 
 // DirectWrite
 user_pref("layers.acceleration.disabled", false);            // default: false
@@ -57,6 +49,44 @@ user_pref("gfx.font_rendering.cleartype_params.force_gdi_classic_max_size", 15);
 user_pref("gfx.font_rendering.cleartype_params.force_gdi_classic_for_families", "");   // default: Arial,Consolas,Courier New,Microsoft Sans Serif,Segoe UI,Tahoma,Trebuchet MS,Verdana
 user_pref("gfx.font_rendering.directwrite.use_gdi_table_loading", false);   // default: true
 
-// enable userContext
-// https://support.mozilla.org/ja/kb/containers
-user_pref("privacy.userContext.enabled", true);
+// Firefox Options
+// about:preferences#general
+user_pref("browser.ctrlTab.recentlyUsedOrder", false);
+user_pref("browser.display.use_document_fonts", 0);
+user_pref("font.name.monospace.ja", "Consolas");
+user_pref("font.name.sans-serif.ja", "BIZ UDPゴシック");
+user_pref("font.name.serif.ja", "BIZ UDP明朝");
+user_pref("general.autoScroll", false);
+user_pref("general.smoothScroll", false);
+user_pref("network.trr.mode", 5);
+
+// about:preferences#containers
+user_pref("privacy.userContext.enabled", true); // Enable Multi-Account Containers https://support.mozilla.org/ja/kb/containers
+user_pref("privacy.userContext.newTabContainerOnLeftClick.enabled", true);
+
+// about:preferences#home
+user_pref("browser.newtabpage.enabled", false);
+user_pref("browser.startup.homepage", "about:blank");
+
+// about:preferences#search
+user_pref("browser.urlbar.matchBuckets", "general:5,suggestion:Infinity");
+
+// about:preferences#privacy
+user_pref("browser.contentblocking.category", "strict");
+// user_pref("privacy.trackingprotection.enabled", true);
+// user_pref("privacy.trackingprotection.socialtracking.enabled", true);
+
+user_pref("media.autoplay.default", 5);
+user_pref("permissions.default.camera", 2);
+user_pref("permissions.default.desktop-notification", 2);
+user_pref("permissions.default.geo", 2);
+user_pref("permissions.default.microphone", 2);
+user_pref("permissions.default.xr", 2);
+user_pref("datareporting.healthreport.uploadEnabled", false);
+user_pref("app.shield.optoutstudies.enabled", false);
+
+// about:preferences#sync
+user_pref("services.sync.declinedEngines", "addons,history,forms");
+
+// Customize Firefox
+user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-fixed-list\":[],\"nav-bar\":[\"back-button\",\"forward-button\",\"stop-reload-button\",\"urlbar-container\",\"personal-bookmarks\",\"downloads-button\",\"library-button\",\"fxa-toolbar-menu-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"alltabs-button\"],\"PersonalToolbar\":[]},\"seen\":[\"developer-button\"],\"dirtyAreaCache\":[\"nav-bar\",\"toolbar-menubar\",\"TabsToolbar\",\"PersonalToolbar\"],\"currentVersion\":16,\"newElementCount\":9}");
