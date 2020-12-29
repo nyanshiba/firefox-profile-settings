@@ -21,6 +21,11 @@
     overflow: hidden !important;
 }
 
+/* タブの一覧表示を常に有効にする */
+#tabbrowser-tabs:not([overflow="true"]):not([hashiddentabs]) ~ #alltabs-button {
+    display: block !important;
+}
+
 /* https://color.firefox.com/?theme=XQAAAAIZAQAAAAAAAABBqYhm849SCia2CaaEGccwS-xMDPr3WmqIMb-4Y8buxy5PGDukvAxjsCSYCzFHp0azVgwzZP-UFwyLyPOzVy5k3LHzR4gg_VURQdCxZpcVJ73qRPhgWjK28yJSu045TYmw32xHXYGC43oG9Rif5Y0C3xc8zumZWtgcjt7dQpVAdV6Ugw23Fyt0zcsdnXFeM8ZJVl7hmxk_CKO9yakmSisw2bfEmhSM3d2nLdEPjpJ__-0KjIA */
 :root {
     --tab-min-height: 30px !important; /* タブバーの高さ */
