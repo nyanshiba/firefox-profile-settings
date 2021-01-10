@@ -49,6 +49,10 @@ user_pref("gfx.font_rendering.cleartype_params.force_gdi_classic_max_size", 15);
 user_pref("gfx.font_rendering.cleartype_params.force_gdi_classic_for_families", "");   // default: Arial,Consolas,Courier New,Microsoft Sans Serif,Segoe UI,Tahoma,Trebuchet MS,Verdana
 user_pref("gfx.font_rendering.directwrite.use_gdi_table_loading", false);   // default: true
 
+// picture-in-picture
+// https://fossies.org/linux/www/firefox-84.0.2.source.tar.xz/firefox-84.0.2/toolkit/components/pictureinpicture/PictureInPicture.jsm
+user_pref("media.videocontrols.picture-in-picture.allow-multiple", true); // multiple pip
+
 // Firefox Options
 // about:preferences#general
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
