@@ -106,3 +106,11 @@
         top: 0 !important;
     }
 }
+
+/* fast.com */
+@-moz-document domain(fast.com) {
+    .test-info-group {
+        background-color: black !important;
+        color: black !important;
+    }
+}
