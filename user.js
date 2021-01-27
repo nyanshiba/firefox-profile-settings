@@ -53,6 +53,10 @@ user_pref("gfx.font_rendering.directwrite.use_gdi_table_loading", false);   // d
 // https://fossies.org/linux/www/firefox-84.0.2.source.tar.xz/firefox-84.0.2/toolkit/components/pictureinpicture/PictureInPicture.jsm
 user_pref("media.videocontrols.picture-in-picture.allow-multiple", true); // multiple pip
 
+// disable zooming with Ctrl+mouse wheel (for Logicool MX Master 3)
+// https://support.mozilla.org/en-US/questions/1253302
+user_pref("mousewheel.with_control.action", 1); // default: 3
+
 // Firefox Options
 // about:preferences#general
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
@@ -61,7 +65,7 @@ user_pref("font.name.monospace.ja", "Consolas");
 user_pref("font.name.sans-serif.ja", "BIZ UDPゴシック");
 user_pref("font.name.serif.ja", "BIZ UDP明朝");
 user_pref("general.autoScroll", false);
-user_pref("general.smoothScroll", false);
+user_pref("general.smoothScroll", true);
 user_pref("network.trr.mode", 5);
 
 // about:preferences#containers
