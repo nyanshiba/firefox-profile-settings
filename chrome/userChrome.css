@@ -13,11 +13,11 @@
     display: none !important;
 }
 
-/* タブスクロールを最小限に、マウスオーバー時はタブを展開 https://www.reddit.com/r/firefox/comments/b3slhs/why_is_there_absolutely_no_possible_way_to/ */
+/* タブスクロールを最小限に、マウスオーバー・選択・再生時はタブを展開 https://www.reddit.com/r/firefox/comments/b3slhs/why_is_there_absolutely_no_possible_way_to/ */
 #tabbrowser-tabs {
     --tab-min-width: 200px !important;
 }
-.tabbrowser-tab:not(:hover) {
+.tabbrowser-tab:not(:hover):not([selected]):not([soundplaying]) {
     min-width: initial !important;
 }
 .tab-content {
