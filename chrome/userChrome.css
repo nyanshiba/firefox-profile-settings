@@ -29,18 +29,6 @@
     display: block !important;
 }
 
-/* https://color.firefox.com/?theme=XQAAAAIZAQAAAAAAAABBqYhm849SCia2CaaEGccwS-xMDPr3WmqIMb-4Y8buxy5PGDukvAxjsCSYCzFHp0azVgwzZP-UFwyLyPOzVy5k3LHzR4gg_VURQdCxZpcVJ73qRPhgWjK28yJSu045TYmw32xHXYGC43oG9Rif5Y0C3xc8zumZWtgcjt7dQpVAdV6Ugw23Fyt0zcsdnXFeM8ZJVl7hmxk_CKO9yakmSisw2bfEmhSM3d2nLdEPjpJ__-0KjIA */
-:root {
-    --tab-min-height: 30px !important; /* タブバーの高さ */
-    --lwt-accent-color: rgb(8, 11, 33) !important; /* Background */
-    --toolbar-bgcolor: rgb(31, 34, 61) !important; /* Toolbar */
-    --lwt-toolbar-field-background-color: rgb(54, 58, 89) !important; /* Search Bar */
-    --lwt-toolbar-field-color: rgb(215, 226, 239) !important;
-}
-#tabbrowser-tabs {
-    --tab-line-color: rgb(205,35,185) !important; /* Tab Highlight */
-}
-
 /* タブラインに色を付ける skipbackgroundnotify
 linkedpanel
 titlechanged */
