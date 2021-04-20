@@ -82,20 +82,31 @@ body {
     position: fixed;
     right: 140px;
     pointer-events: none;
-    padding: 0 5px;
+    padding: 2px 4px;
     border-radius: 6px 6px 0 0;
-    font-size: 13px;
+    font-size: 12px;
     content: counter(alltabcounter) " (+" counter(activetabcounter) ")" !important;
-    color: white;
-    background-color: var(--arrowpanel-dimmed-further);
-    border: 4px solid var(--lwt-accent-color) !important;
-    border-bottom: 3px solid var(--arrowpanel-dimmed) !important;
+    color: var(--lwt-text-color);
+    background-color: var(--toolbar-bgcolor);
+    border: 4px solid rgb(32,35,64) !important; /* if not the default theme: var(--lwt-accent-color) */
+    border-bottom: 3px solid var(--toolbar-bgcolor) !important;
     opacity: 1 !important;
 }
 .tabbrowser-tab:nth-child(n+100):last-of-type::after {
+    color: white;
     background-color: rgba(255,0,0,.9);
     border-bottom-color: rgba(255,0,0,.9) !important;
 }
-.titlebar-spacer[type="pre-tabs"], .titlebar-spacer[type="post-tabs"] {
+.titlebar-spacer[type="post-tabs"] {
     width: 80px!important;
+}
+.private-browsing-indicator {
+    width: 36px;
+    padding-right: 100px!important;
+    /* #8000D7 */
+}
+
+/* スペーサーを削除 */
+.titlebar-spacer[type="pre-tabs"] {
+    display: none;
 }
