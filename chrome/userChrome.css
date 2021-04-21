@@ -17,11 +17,19 @@
 #tabbrowser-tabs {
     --tab-min-width: 200px !important;
 }
+.tabbrowser-tab {
+    padding-inline: 0 !important;
+}
 .tabbrowser-tab:not(:hover):not([selected]):not([soundplaying]) {
-    min-width: initial !important;
+    min-width: 20px !important;
 }
 .tab-content {
     overflow: hidden !important;
+}
+:root {
+    --tab-min-height: 28px !important;
+    --proton-tab-block-margin: 4px !important;
+    --inline-tab-padding: 4px !important;
 }
 
 /* タブの一覧表示を常に有効にする */
@@ -29,31 +37,20 @@
     display: block !important;
 }
 
-/* タブラインに色を付ける skipbackgroundnotify
-linkedpanel
-titlechanged */
-.tabbrowser-tab[pending] > .tab-stack > .tab-background > .tab-line,
-.tabbrowser-tab[titlechanged] > .tab-stack > .tab-background > .tab-line,
-.tabbrowser-tab[soundplaying] > .tab-stack > .tab-background > .tab-line,
-.tabbrowser-tab[attention] > .tab-stack > .tab-background > .tab-line {
-    opacity: 1 !important;
-    transform: none !important;
+/* タブラインに色を付ける [pending] */
+.tabbrowser-tab[soundplaying] > .tab-stack > .tab-background {
+    background: crimson !important;
 }
-.tabbrowser-tab[pending] /* ≒skipbackgroundnotify <-->linkedpanel */ > .tab-stack > .tab-background > .tab-line {
-    background-color: var(--arrowpanel-dimmed) !important; /* lightslategray */
-}
-.tabbrowser-tab[titlechanged] > .tab-stack > .tab-background > .tab-line {
-    background-color: tomato !important;
-    /* background-color: orchid !important; */
-}
-.tabbrowser-tab[soundplaying] > .tab-stack > .tab-background > .tab-line {
-    background-color: crimson !important;
-}
-.tabbrowser-tab[attention] > .tab-stack > .tab-background > .tab-line {
-    background-color: darkturquoise !important; /* LightSeaGreen */
+.tabbrowser-tab[attention] > .tab-stack > .tab-background {
+    background: darkturquoise !important; /* LightSeaGreen */
 }
 .tab-content[attention] {
     background: none !important;
+}
+
+/* タブの文字を明瞭に */
+:root[tabsintitlebar] .tab-label:-moz-window-inactive {
+    opacity: 1 !important;
 }
 
 /* フォーカスされたタブの境界を無くす */
@@ -82,13 +79,14 @@ body {
     position: fixed;
     right: 140px;
     pointer-events: none;
+    margin-top: 2px;
     padding: 2px 4px;
     border-radius: 6px 6px 0 0;
     font-size: 12px;
     content: counter(alltabcounter) " (+" counter(activetabcounter) ")" !important;
     color: var(--lwt-text-color);
     background-color: var(--toolbar-bgcolor);
-    border: 4px solid rgb(32,35,64) !important; /* if not the default theme: var(--lwt-accent-color) */
+    border: 4px solid var(--lwt-accent-color) !important; /* If you are using the old default theme: rgb(32,35,64) */
     border-bottom: 3px solid var(--toolbar-bgcolor) !important;
     opacity: 1 !important;
 }
@@ -98,7 +96,7 @@ body {
     border-bottom-color: rgba(255,0,0,.9) !important;
 }
 .titlebar-spacer[type="post-tabs"] {
-    width: 80px!important;
+    width: 60px!important;
 }
 .private-browsing-indicator {
     width: 36px;
