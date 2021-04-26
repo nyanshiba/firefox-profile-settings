@@ -57,6 +57,9 @@ user_pref("media.videocontrols.picture-in-picture.allow-multiple", true); // mul
 // https://support.mozilla.org/en-US/questions/1253302
 user_pref("mousewheel.with_control.action", 1); // default: 3
 
+// Windowsの設定に関わらず常にダークモードにする
+user_pref("ui.systemUsesDarkTheme", 1);
+
 // Firefox Options
 // about:preferences#general
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
@@ -80,10 +83,11 @@ user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.urlbar.matchBuckets", "general:5,suggestion:Infinity");
 
 // about:preferences#privacy
-user_pref("browser.contentblocking.category", "strict");
+//user_pref("browser.contentblocking.category", "strict");
+user_pref("browser.contentblocking.category", "custom");
+user_pref("network.cookie.cookieBehavior", 2);
 // user_pref("privacy.trackingprotection.enabled", true);
 // user_pref("privacy.trackingprotection.socialtracking.enabled", true);
-
 user_pref("media.autoplay.default", 5);
 user_pref("permissions.default.camera", 2);
 user_pref("permissions.default.desktop-notification", 2);
@@ -92,6 +96,7 @@ user_pref("permissions.default.microphone", 2);
 user_pref("permissions.default.xr", 2);
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("app.shield.optoutstudies.enabled", false);
+user_pref("signon.autofillForms", false);
 
 // about:preferences#sync
 user_pref("services.sync.declinedEngines", "addons,history,forms");
