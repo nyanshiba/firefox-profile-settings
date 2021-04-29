@@ -43,8 +43,8 @@ user_pref("gfx.font_rendering.cleartype_params.rendering_mode", 5);        // de
 user_pref("gfx.font_rendering.directwrite.enabled", true);                 // default: true
 user_pref("gfx.use_text_smoothing_setting", true);                         // default: false 
 
-user_pref("gfx.font_rendering.cleartype_params.enhanced_contrast", 100);   // default: -1 0は掠れたマジック 50~100が綺麗
-user_pref("gfx.font_rendering.cleartype_params.gamma", 3000);   // default: -1 1000 極太マジック ~ 3000 綺麗
+user_pref("gfx.font_rendering.cleartype_params.enhanced_contrast", 100);   // default: -1 0-100 文字の濃さ gammaと一緒に調整が必要
+user_pref("gfx.font_rendering.cleartype_params.gamma", 2000);   // default: -1 1000 ~ 3000 フォントによって効果がマチマチ
 user_pref("gfx.font_rendering.cleartype_params.force_gdi_classic_max_size", 15);   // default: 15
 user_pref("gfx.font_rendering.cleartype_params.force_gdi_classic_for_families", "");   // default: Arial,Consolas,Courier New,Microsoft Sans Serif,Segoe UI,Tahoma,Trebuchet MS,Verdana
 user_pref("gfx.font_rendering.directwrite.use_gdi_table_loading", false);   // default: true
@@ -63,7 +63,7 @@ user_pref("ui.systemUsesDarkTheme", 1);
 // Firefox Options
 // about:preferences#general
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
-user_pref("browser.display.use_document_fonts", 0);
+user_pref("browser.display.use_document_fonts", 1); // userContent.cssを優先する
 user_pref("font.name.monospace.ja", "Consolas");
 user_pref("font.name.sans-serif.ja", "BIZ UDPゴシック");
 user_pref("font.name.serif.ja", "BIZ UDP明朝");
