@@ -1,4 +1,4 @@
-* {
+*:lang(ja):not(button):not(i) { /* アイコンフォントを除外する */
     scrollbar-width: thin !important;
 
     /* 源ノ角ゴを使う場合
