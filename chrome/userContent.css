@@ -22,15 +22,15 @@
         display: none!important;
     }
 }
-    
+
+/* Discord デスクトップ版を勧めるバナーを隠す */
 @-moz-document domain(discord.com) { 
-/* Discord disable banner */
     .notice-3bPHh- {
         display: none;
     }
 }
 
-/* Google Translate */
+/* Google Translate バナーを隠す */
 @-moz-document domain(translate.google.com) {
     #wtgbr,
     #gt-c {
@@ -41,7 +41,15 @@
     }
 }
 
-/* fast.com */
+/* amazon.co.jp 住所を隠す */
+@-moz-document domain(amazon.co.jp) {
+    #glow-ingress-block > span {
+        background-color: #232f3e !important;
+        color: #232f3e !important;
+    }
+}
+
+/* fast.com IPアドレスを隠す */
 @-moz-document domain(fast.com) {
     .test-info-group {
         background-color: black !important;
