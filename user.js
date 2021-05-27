@@ -62,6 +62,9 @@ user_pref("mousewheel.with_control.action", 1); // default: 3
 // Windowsの設定に関わらず常にダークモードにする
 user_pref("ui.systemUsesDarkTheme", 1);
 
+// Disable ServiceWorker about:serviceworkersでunregisterしてから無効化
+user_pref("dom.serviceWorkers.enabled", false);
+
 // Firefox Options
 // about:preferences#general
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
