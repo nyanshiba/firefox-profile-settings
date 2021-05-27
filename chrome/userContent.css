@@ -1,5 +1,4 @@
-*:lang(ja):not(button):not(i) { /* アイコンフォントを除外する */
-    scrollbar-width: thin !important;
+*:not(button):not(i):not(a > span):not(span > span):not(pre):not(code) { /* アイコンフォントをできるだけ除外する */
 
     /* 源ノ角ゴを使う場合
     font-family: 'Neue Haas Grotesk Text Pro','源ノ角ゴシック' !important;
@@ -7,8 +6,12 @@
     font-feature-settings: "pkna" !important;
     */
 
-    /* 全てのページで強制的にBIZ UDPゴシックを使いたいが、全角英数字の見分けが付かず恥ずかしい思いをするので、FontForgeするか欧文フォントconsolasを前に持ってくる回避策が必要。 */
-    font-family: 'consolas','BIZ UDPGothic' !important;
+    /* 全てのページで強制的にBIZ UDPゴシックを使いたいが、全角英数字の見分けが付かず恥ずかしい思いをするので、FontForgeするか欧文フォントを前に持ってくる回避策が必要。 */
+    font-family: 'Arial Nova', 'BIZ UDPGothic' !important;
+}
+pre,
+code {
+    font-family: 'consolas', 'BIZ UDPGothic' !important;
 }
 
 /* https://superuser.com/questions/318912/how-can-i-override-the-css-of-a-site-in-firefox-with-usercontent-css */
