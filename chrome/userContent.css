@@ -39,6 +39,10 @@ code {
     .r-1niwhzg:not(.r-6gpygo) .r-1ccsd61:not(.r-6gpygo) {
         background-color: rgb(29, 161, 242) !important;
     }
+    /* 画像のmargin-topを.r-1s2bzr4(埋め込みリンク)に倣って修正 */
+    .r-1867qdf {
+        margin-top: 12px !important;
+    }
 }
 
 /* Discord デスクトップ版を勧めるバナーを隠す */
