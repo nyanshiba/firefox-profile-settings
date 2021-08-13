@@ -51,6 +51,9 @@ code {
         background-color: #232f3e !important;
         color: #232f3e !important;
     }
+    #contextualIngressPtLabel {
+        display: none !important;
+    }
 }
 
 /* IPアドレスを隠す */
