@@ -63,6 +63,16 @@ code {
     }
 }
 
+/* *.wikipedia.org バナーを隠す */
+@-moz-document domain(wikipedia.org) {
+    #siteNotice {
+        display: none;
+    }
+    .frb-nag {
+        display: none;
+    }
+}
+
 /* IPアドレスを隠す */
 @-moz-document domain(fast.com) {
     .test-info-group {
