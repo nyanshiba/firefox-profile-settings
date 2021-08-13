@@ -17,11 +17,9 @@ code {
 /* https://superuser.com/questions/318912/how-can-i-override-the-css-of-a-site-in-firefox-with-usercontent-css */
 /* YouTube banner ads */
 @-moz-document domain(youtube.com) {
-    #invideo-overlay\:y,
-    #invideo-overlay\:14,
-    .ytp-ad-overlay-container,
-    #YtKevlarVisibilityIdentifier,
-    #player-ads {
+    .video-ads, /* 動画内バナー */
+    /* #YtKevlarVisibilityIdentifier, */
+    #player-ads /* 関連動画上 */ {
         display: none!important;
     }
 }
