@@ -28,7 +28,8 @@ code {
 
 /* Discord デスクトップ版を勧めるバナーを隠す */
 @-moz-document domain(discord.com) { 
-    .notice-3bPHh- {
+    .notice-3bPHh-,
+    .channelNotice-1-XFjC {
         display: none;
     }
 }
