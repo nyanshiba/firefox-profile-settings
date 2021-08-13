@@ -12,9 +12,6 @@ user_pref("gfx.webrender.all", false);
 // https://support.mozilla.org/en-US/kb/how-reset-default-user-agent-firefox
 // user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36");
 
-// change sync interval
-user_pref("services.sync.syncInterval", 60000); // default: 600000ms(10min)
-
 // enable color management
 // https://developer.mozilla.org/ja/docs/Mozilla/Firefox/Releases/3.5/ICC_color_correction_in_Firefox
 user_pref("gfx.color_management.mode", 2);
