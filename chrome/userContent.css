@@ -41,7 +41,10 @@ code {
     }
     /* 画像のmargin-topを.r-1s2bzr4(埋め込みリンク)に倣って修正 */
     .r-1867qdf {
-        margin-top: 12px !important;
+        margin-top: 6px !important;
+    }
+    .r-1s2bzr4 {
+        margin-top: 6px !important;
     }
 }
 
