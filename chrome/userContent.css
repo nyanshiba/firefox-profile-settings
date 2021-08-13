@@ -56,6 +56,13 @@ code {
     }
 }
 
+/* *.tradingview.com バナーを隠す */
+@-moz-document domain(tradingview.com) {
+    #overlap-manager-root {
+        display: none;
+    }
+}
+
 /* IPアドレスを隠す */
 @-moz-document domain(fast.com) {
     .test-info-group {
