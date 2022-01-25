@@ -35,13 +35,16 @@ code {
 }
 
 /* Google Translate バナーを隠す */
-@-moz-document domain(translate.google.com) {
+@-moz-document domain(translate.goog) {
     #wtgbr,
-    #gt-c {
+    #gt-c,
+    #gt-nvframe {
         display: none !important;
     }
-    #contentframe {
+    #contentframe,
+    body {
         top: 0 !important;
+        margin-top: 0 !important;
     }
 }
 
