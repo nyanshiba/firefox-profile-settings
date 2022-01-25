@@ -24,30 +24,6 @@ code {
     }
 }
 
-/* Twitter フォロー中/フォローボタンの色を戻す */
-@-moz-document domain(twitter.com) { 
-    .r-14lw9ot {
-        background-color: rgba(0, 0, 0, 0) !important;
-    }
-    .r-jwli3a,
-    .css-901oao:not(.r-9ilb82):not(.r-1fmj7o5) .css-16my406:not(.r-9ilb82) .r-qvutc0 {
-        color: rgb(255, 255, 255) !important;
-    }
-    .r-ymttw5:not(.r-1niwhzg) {
-    border-color: rgb(83, 100, 113) !important;
-    }
-    .r-1niwhzg:not(.r-6gpygo) .r-1ccsd61:not(.r-6gpygo) {
-        background-color: rgb(29, 161, 242) !important;
-    }
-    /* 画像のmargin-topを.r-1s2bzr4(埋め込みリンク)に倣って修正 */
-    .r-1867qdf {
-        margin-top: 6px !important;
-    }
-    .r-1s2bzr4 {
-        margin-top: 6px !important;
-    }
-}
-
 /* Discord デスクトップ版を勧めるバナーを隠す */
 @-moz-document domain(discord.com) { 
     .notice-3bPHh-,
