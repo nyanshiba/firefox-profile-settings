@@ -73,6 +73,13 @@ code {
     }
 }
 
+/* *.ovice.in マイクの催促を隠す */
+@-moz-document domain(ovice.in) {
+    #micPermissionModal {
+        display: none !important;
+    }
+}
+
 /* IPアドレスを隠す */
 @-moz-document domain(fast.com) {
     .test-info-group {
