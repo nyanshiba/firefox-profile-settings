@@ -108,6 +108,11 @@ code {
         visibility: hidden !important;
     }
 }
+@-moz-document domain(inonius.net) {
+    span#ip {
+        background: #202020 !important;
+    }
+}
 @-moz-document url-prefix("https://www.google") {
     #Wprf1b {
         display: none !important;
