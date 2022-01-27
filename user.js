@@ -159,8 +159,10 @@ user_pref("permissions.default.desktop-notification", 2);
 user_pref("permissions.default.geo", 2);
 user_pref("permissions.default.microphone", 2);
 user_pref("permissions.default.xr", 2);
-user_pref("datareporting.healthreport.uploadEnabled", false);
-user_pref("app.shield.optoutstudies.enabled", false);
+
+user_pref("datareporting.healthreport.uploadEnabled", true); // default: true
+user_pref("app.shield.optoutstudies.enabled", true); // default: true
+
 user_pref("signon.autofillForms", false);
 
 // about:preferences#sync
