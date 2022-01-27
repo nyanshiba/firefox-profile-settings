@@ -89,11 +89,46 @@ user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.urlbar.matchBuckets", "general:5,suggestion:Infinity");
 
 // about:preferences#privacy
-//user_pref("browser.contentblocking.category", "strict");
-user_pref("browser.contentblocking.category", "custom");
-user_pref("network.cookie.cookieBehavior", 2);
-// user_pref("privacy.trackingprotection.enabled", true);
-// user_pref("privacy.trackingprotection.socialtracking.enabled", true);
+// https://hg.mozilla.org/mozilla-central/file/tip/browser/components/preferences/tests/browser_contentblocking.js
+// CAT_PREF
+user_pref("browser.contentblocking.category", "strict"); // default: (empty)
+// STRICT_PREF
+//user_pref("browser.contentblocking.features.strict", "tp,tpPrivate,cookieBehavior5,cookieBehaviorPBM5,cm,fp,stp,lvl2,rp,ocsp"); // default: (empty)
+    /* TP_PREF
+    user_pref("privacy.trackingprotection.enabled", true); // default: false
+    // TP_PBM_PREF
+    user_pref("privacy.trackingprotection.pbmode.enabled", true); // default: true
+    // NCB_PREF
+    // http://kb.mozillazine.org/Network.cookie.cookieBehavior
+    // 0: all accept, 1: allow only first-party 2: all denyed, 3: third-party(previous visit) allowed, 4: Only reject trackers, 5: Reject (known) trackers and partition third-party storage.  1 or 2, 5 を同時に設定したいが、5を優先する
+    // https://developer.mozilla.org/en-US/docs/Web/Privacy/State_Partitioning
+    // https://github.com/privacytools/privacytools.io/issues/1704#issuecomment-820931105 FPI(privacy.firstparty.isolate)では1が推奨されるが、dFPIに移行してdeprecatedなので5を使いましょう
+    user_pref("network.cookie.cookieBehavior", 5); // default: 4
+    // NCBP_PREF
+    user_pref("network.cookie.cookieBehavior.pbmode", 5); // default: 5
+    // FP_PREF
+    user_pref("privacy.trackingprotection.fingerprinting.enabled", true); // default: true
+    // STP_PREF
+    user_pref("privacy.trackingprotection.socialtracking.enabled", true); // default: false
+    // CM_PREF
+    user_pref("privacy.trackingprotection.cryptomining.enabled", true); // default: true
+    // LEVEL2_PREF
+    user_pref("privacy.annotate_channels.strict_list.enabled", true); // default: false
+    // REFERRER_PREF
+    user_pref("network.http.referer.disallowCrossSiteRelaxingDefault", true); // default: false
+    // OCSP_PREF
+    user_pref("privacy.partition.network_state.ocsp_cache", true); // default: false
+    // PREF_TEST_NOTIFICATIONS
+    user_pref("browser.safebrowsing.test-notifications.enabled", ""); // default: (empty)
+    */
+    // FPI_PREF
+    // https://github.com/arkenfox/user.js [WARNING] Replaced with network partitioning (FF85+) and TCP (2701),
+    user_pref("privacy.firstparty.isolate", false); // default: false
+// https://github.com/arkenfox/user.js/issues/1051#issuecomment-768656662 move from FPI to dFPI · Issue #1051
+user_pref("privacy.partition.network_state", true); // default: true
+
+user_pref("privacy.donottrackheader.enabled", false); // 既知のトラッカーをブロックする設定時のみ 逆に追跡されるのを避けて完全に無効化したい人はChromeを使うべし
+
 user_pref("media.autoplay.default", 5);
 // https://developer.mozilla.org/ja/docs/Web/Media/Autoplay_guide
 user_pref("media.autoplay.allow-extension-background-pages", false); // default: false
