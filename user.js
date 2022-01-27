@@ -59,6 +59,11 @@ user_pref("media.videocontrols.picture-in-picture.allow-multiple", true); // def
 // PiPのミュートボタン
 user_pref("media.videocontrols.picture-in-picture.audio-toggle.enabled", true); // default: false
 
+// フルスクリーン時のアニメーションを無効化
+user_pref("full-screen-api.transition-duration.enter", "0 0"); // default: 200 200	
+user_pref("full-screen-api.transition-duration.leave", "0 0"); // default: 200 200
+user_pref("full-screen-api.warning.timeout", 0); // default: 3000
+
 // disable zooming with Ctrl+mouse wheel (for Logicool MX Master 3)
 // https://support.mozilla.org/en-US/questions/1253302
 user_pref("mousewheel.with_control.action", 1); // default: 3
