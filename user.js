@@ -174,6 +174,15 @@ user_pref("security.OCSP.require", false); // default: false
 // https://blog.mozilla.org/security/2020/01/09/crlite-part-1-all-web-pki-revocations-compressed/
 user_pref("security.pki.crlite_mode", 2); // default: 1
 
+// HTTPS-Only Mode
+//user_pref("dom.security.https_only_mode", false); // default: false
+user_pref("dom.security.https_only_mode_pbm", true); // default: false
+// block mixed content
+user_pref("dom.block_download_insecure", true); // default: true
+// HTTPS-First Mode https://blog.mozilla.org/security/2021/08/10/firefox-91-introduces-https-by-default-in-private-browsing/
+user_pref("dom.security.https_first", true); // default: false
+user_pref("dom.security.https_first_pbm", true); // default: true 
+
 // about:preferences#sync
 user_pref("services.sync.declinedEngines", "addons,history,forms");
 
