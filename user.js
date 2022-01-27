@@ -165,6 +165,15 @@ user_pref("permissions.default.xr", 2);
 user_pref("datareporting.healthreport.uploadEnabled", true); // default: true
 user_pref("app.shield.optoutstudies.enabled", true); // default: true
 
+// https://github.com/milgradesec/firefox-settings#readme
+// Disable OCSP checks
+user_pref("security.OCSP.enabled", 0); // default: 1
+user_pref("security.OCSP.require", false); // default: false
+
+// Enforce CRLite revocation checks
+// https://blog.mozilla.org/security/2020/01/09/crlite-part-1-all-web-pki-revocations-compressed/
+user_pref("security.pki.crlite_mode", 2); // default: 1
+
 // about:preferences#sync
 user_pref("services.sync.declinedEngines", "addons,history,forms");
 
