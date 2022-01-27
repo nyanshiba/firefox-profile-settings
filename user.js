@@ -3,8 +3,12 @@
 // enable userChrome
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
-// https://www.reddit.com/r/FirefoxCSS/comments/gk93p2/help_in_creating_a_transparent_userchromecss/
-user_pref("gfx.webrender.all", false);
+// Enabling Fission https://wiki.mozilla.org/Project_Fission
+user_pref("fission.autostart", true);
+user_pref("gfx.webrender.all", true);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1592293
+user_pref("gfx.webrender.quality.force-subpixel-aa-where-possible", true); // default: false
+user_pref("gfx.text.subpixel-position.force-disabled", true); // default: false
 
 // change user agent
 // Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0
