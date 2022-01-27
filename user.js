@@ -31,26 +31,17 @@ user_pref("media.hardware-video-decoding.force-enabled", true); // defalut: fals
 user_pref("media.wmf.vp9.enabled", true); // default: false trueでは↓が3になってしまう
 user_pref("gfx.crash-guard.status.wmfvpxvideo", 0); // クラッシュガードが無効化～はこれが3の場合
 
-// DirectWrite
-user_pref("layers.acceleration.disabled", false);            // default: false
-user_pref("layers.acceleration.force-enabled", true);        // default: false
-user_pref("gfx.direct2d.disabled", false);                   // default: false
-user_pref("gfx.direct2d.force-enabled", true);               // default: false
-
-user_pref("gfx.font_rendering.cleartype.always_use_for_content", true);    // default: false
-user_pref("gfx.font_rendering.cleartype_params.cleartype_level", -1);     // default: -1
-user_pref("gfx.font_rendering.cleartype_params.pixel_structure", -1);       // default: -1
-user_pref("gfx.font_rendering.cleartype_params.rendering_mode", 5);        // default: -1
-user_pref("gfx.font_rendering.directwrite.enabled", true);                 // default: true
-user_pref("gfx.use_text_smoothing_setting", true);                         // default: false 
-
-user_pref("gfx.font_rendering.cleartype_params.enhanced_contrast", -1);   // default: -1 0-100 文字の濃さ gammaと一緒に調整が必要
-user_pref("gfx.font_rendering.cleartype_params.gamma", -1);   // default: -1 1000 ~ 3000 フォントによって効果がマチマチ
-user_pref("gfx.font_rendering.cleartype_params.force_gdi_classic_max_size", 15);   // default: 15
-user_pref("gfx.font_rendering.cleartype_params.force_gdi_classic_for_families", "");   // default: Arial,Consolas,Courier New,Microsoft Sans Serif,Segoe UI,Tahoma,Trebuchet MS,Verdana
-user_pref("gfx.font_rendering.directwrite.use_gdi_table_loading", false);   // default: true
-// WindowsのClearTypeの設定と重複するので、Firefoxでは弄らずそちらで調整するべき https://docs.microsoft.com/en-us/dotnet/desktop/wpf/advanced/cleartype-registry-settings
+// WindowsのClearTypeの設定と重複するので、Firefoxでは弄らずそちらで調整するべき
+// https://docs.microsoft.com/en-us/dotnet/desktop/wpf/advanced/cleartype-registry-settings
 // \HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\DISPLAY1
+user_pref("gfx.font_rendering.cleartype_params.cleartype_level", 100);     // default: -1
+user_pref("gfx.font_rendering.cleartype_params.enhanced_contrast", 200);   // default: -1 0-100 文字の濃さ gammaと一緒に調整が必要
+user_pref("gfx.font_rendering.cleartype_params.gamma", 2200);   // default: -1 1000 ~ 3000 フォントによって効果がマチマチ
+user_pref("gfx.font_rendering.cleartype_params.pixel_structure", 1);       // default: -1
+
+user_pref("gfx.font_rendering.cleartype_params.rendering_mode", 5);
+
+user_pref("gfx.font_rendering.directwrite.use_gdi_table_loading", false);   // default: true
 
 // picture-in-picture
 // https://fossies.org/linux/www/firefox-84.0.2.source.tar.xz/firefox-84.0.2/toolkit/components/pictureinpicture/PictureInPicture.jsm
