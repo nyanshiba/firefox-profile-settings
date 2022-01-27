@@ -91,6 +91,11 @@ user_pref("network.cookie.cookieBehavior", 2);
 // user_pref("privacy.trackingprotection.enabled", true);
 // user_pref("privacy.trackingprotection.socialtracking.enabled", true);
 user_pref("media.autoplay.default", 5);
+// https://developer.mozilla.org/ja/docs/Web/Media/Autoplay_guide
+user_pref("media.autoplay.allow-extension-background-pages", false); // default: false
+user_pref("media.autoplay.block-webaudio", true); // default: false
+user_pref("media.autoplay.block-event.enabled", true); // default: false
+//user_pref("media.block-autoplay-until-in-foreground", true); // default: true
 user_pref("permissions.default.camera", 2);
 user_pref("permissions.default.desktop-notification", 2);
 user_pref("permissions.default.geo", 2);
