@@ -129,6 +129,8 @@ user_pref("privacy.partition.network_state", true); // default: true
 
 user_pref("privacy.donottrackheader.enabled", false); // 既知のトラッカーをブロックする設定時のみ 逆に追跡されるのを避けて完全に無効化したい人はChromeを使うべし
 
+user_pref("signon.autofillForms", false); // default: true ログイン情報とパスワードを自動入力しない
+
 // 履歴を消去
 user_pref("privacy.cpd.cache", false); // キャッシュ(タブ）
 user_pref("privacy.cpd.offlineApps", true); // ウェブサイトのオフライン作業用データ
@@ -162,8 +164,6 @@ user_pref("permissions.default.xr", 2);
 
 user_pref("datareporting.healthreport.uploadEnabled", true); // default: true
 user_pref("app.shield.optoutstudies.enabled", true); // default: true
-
-user_pref("signon.autofillForms", false);
 
 // about:preferences#sync
 user_pref("services.sync.declinedEngines", "addons,history,forms");
