@@ -129,6 +129,25 @@ user_pref("privacy.partition.network_state", true); // default: true
 
 user_pref("privacy.donottrackheader.enabled", false); // 既知のトラッカーをブロックする設定時のみ 逆に追跡されるのを避けて完全に無効化したい人はChromeを使うべし
 
+// 履歴を消去
+user_pref("privacy.cpd.cache", false); // キャッシュ(タブ）
+user_pref("privacy.cpd.offlineApps", true); // ウェブサイトのオフライン作業用データ
+
+user_pref("privacy.history.custom", true); // 記憶させる履歴を詳細設定する
+user_pref("places.history.enabled", false); // 表示したページとファイルのダウンロード履歴を残す
+user_pref("browser.formfill.enable", true); // 検索やフォームの入力履歴を記憶させる(clearOnShutdownで消す)
+
+user_pref("privacy.sanitize.sanitizeOnShutdown", true); // Firefoxの終了時に履歴を消去する
+user_pref("privacy.clearOnShutdown.cache", true); // キャッシュ(タブではない)
+user_pref("privacy.clearOnShutdown.cookies", false); // Cookie(ログイン状態)
+user_pref("privacy.clearOnShutdown.downloads", true); // ダウンロードの履歴
+user_pref("privacy.clearOnShutdown.formdata", true); // 検索やフォームの入力履歴
+user_pref("privacy.clearOnShutdown.history", false); // 表示したページと(タブ)
+user_pref("privacy.clearOnShutdown.offlineApps", false); // ウェブサイトのオフライン作業用データ
+// user_pref("privacy.clearOnShutdown.openWindows", false); // 開いているウィンドウ？効いてない
+user_pref("privacy.clearOnShutdown.sessions", true); // セッション(ログイン状態はCookie)
+user_pref("privacy.clearOnShutdown.siteSettings", false); // サイトの設定
+
 user_pref("media.autoplay.default", 5);
 // https://developer.mozilla.org/ja/docs/Web/Media/Autoplay_guide
 user_pref("media.autoplay.allow-extension-background-pages", false); // default: false
