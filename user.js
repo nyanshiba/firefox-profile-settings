@@ -54,7 +54,10 @@ user_pref("gfx.font_rendering.directwrite.use_gdi_table_loading", false);   // d
 
 // picture-in-picture
 // https://fossies.org/linux/www/firefox-84.0.2.source.tar.xz/firefox-84.0.2/toolkit/components/pictureinpicture/PictureInPicture.jsm
-user_pref("media.videocontrols.picture-in-picture.allow-multiple", true); // multiple pip
+// 複数のPiP
+user_pref("media.videocontrols.picture-in-picture.allow-multiple", true); // default: true
+// PiPのミュートボタン
+user_pref("media.videocontrols.picture-in-picture.audio-toggle.enabled", true); // default: false
 
 // disable zooming with Ctrl+mouse wheel (for Logicool MX Master 3)
 // https://support.mozilla.org/en-US/questions/1253302
