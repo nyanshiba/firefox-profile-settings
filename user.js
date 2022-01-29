@@ -97,6 +97,23 @@ user_pref("network.http.altsvc.enabled", true); // default: true
 user_pref("network.dns.force_waiting_https_rr", true); // default: false
 user_pref("network.dns.use_https_rr_for_speculative_connection", true); // default: false
 
+// HTTP/3をデフォルトにしてRTTの影響を少しでも減らしつつ、HTTP/2等との互換性を保つ？設定
+// https://kb.mozillazine.org/Network.http.version
+user_pref("network.http.proxy.version", "3"); // default: 1.1
+// Chromium同様に https://cloudflare-quic.com/ への初回接続がHTTP/3になっていれば動作している
+user_pref("network.http.version", "3"); // default: 1.1
+// 現状"2"でHTTP/2をデフォルトにした方が速い場合も多いので、早めにフォールバックさせる
+// https://hg.mozilla.org/releases/mozilla-release/rev/b3b6307b6f157d436b4bb204f645e45f4bb38499
+user_pref("network.http.http3.backup_timer_delay", 10) // default: 100
+user_pref("network.dns.httpssvc.http3_fast_fallback_timeout", 5) // default: 50
+//user_pref("network.http.http3.parallel_fallback_conn_limit", 32) // default: 32
+
+//user_pref("security.tls.version.fallback-limit", 4) // default: 4
+//user_pref("security.tls.version.max", 4) // default: 4
+// https://github.com/mozilla/policy-templates/issues/541#issuecomment-927193462
+//user_pref("security.tls.version.min", 3) // default: 3 無視される
+user_pref("security.tls.enable_post_handshake_auth", true) // default: false
+
 // Firefox Options
 // about:preferences#general
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
