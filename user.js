@@ -126,6 +126,13 @@ user_pref("browser.contentblocking.category", "strict"); // default: (empty)
 // https://github.com/arkenfox/user.js/issues/1051#issuecomment-768656662 move from FPI to dFPI · Issue #1051
 user_pref("privacy.partition.network_state", true); // default: true
 
+// https://hacks.mozilla.org/2020/08/changes-to-samesite-cookie-behavior/
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite
+// SameSite=Lax by default
+user_pref("network.cookie.sameSite.laxByDefault", true); // default: false
+// SameSite=None; Secure
+user_pref("network.cookie.sameSite.noneRequiresSecure", true); // default: false
+
 user_pref("privacy.donottrackheader.enabled", false); // 既知のトラッカーをブロックする設定時のみ 逆に追跡されるのを避けて完全に無効化したい人はChromeを使うべし
 
 user_pref("signon.autofillForms", false); // default: true ログイン情報とパスワードを自動入力しない
