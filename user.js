@@ -85,6 +85,18 @@ user_pref("security.ssl3.rsa_aes_256_gcm_sha384", false); // default: true
 user_pref("security.ssl3.rsa_aes_128_sha", false); // default: true
 //user_pref("security.ssl3.rsa_aes_256_sha", true); // default: true しばしば見られないサイトがあるので有効のまま
 
+// Enable Encrypted Client Hello (ECH/ESNI) & Type65 RR
+// https://blog.mozilla.org/security/2021/01/07/encrypted-client-hello-the-future-of-esni-in-firefox/
+user_pref("network.dns.echconfig.enabled", true); // default: false
+user_pref("network.dns.http3_echconfig.enabled", true); // default: false
+user_pref("network.dns.use_https_rr_as_altsvc", true); // default: true
+//user_pref("network.http.http3.support_version1", true); // default: true
+user_pref("network.http.altsvc.enabled", true); // default: true
+//user_pref("network.http.altsvc.oe", false); // default: false
+// https://hg.mozilla.org/mozilla-central/file/tip/modules/libpref/init/StaticPrefList.yaml#l10609
+user_pref("network.dns.force_waiting_https_rr", true); // default: false
+user_pref("network.dns.use_https_rr_for_speculative_connection", true); // default: false
+
 // Firefox Options
 // about:preferences#general
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
