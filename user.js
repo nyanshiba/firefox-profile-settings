@@ -70,6 +70,20 @@ user_pref("dom.serviceWorkers.enabled", true); // default: true
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1731999
 user_pref("privacy.partition.serviceWorkers", true); // default: false
 
+// https://github.com/milgradesec/firefox-settings#readme
+// Disable weak ciphersuites
+// https://clienttest.ssllabs.com/ssltest/viewMyClient.html
+//security.ssl3.deprecated.rsa_des_ede3_sha, true
+user_pref("security.ssl3.dhe_rsa_aes_128_sha", false); // default: false
+user_pref("security.ssl3.dhe_rsa_aes_256_sha", false); // default: false
+user_pref("security.ssl3.ecdhe_ecdsa_aes_128_sha", false); // default: true
+user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha", false); // default: true
+user_pref("security.ssl3.ecdhe_rsa_aes_128_sha", false); // default: true
+user_pref("security.ssl3.ecdhe_rsa_aes_256_sha", false); // default: true
+user_pref("security.ssl3.rsa_aes_128_gcm_sha256", false); // default: true
+user_pref("security.ssl3.rsa_aes_256_gcm_sha384", false); // default: true
+user_pref("security.ssl3.rsa_aes_128_sha", false); // default: true
+//user_pref("security.ssl3.rsa_aes_256_sha", true); // default: true しばしば見られないサイトがあるので有効のまま
 
 // Firefox Options
 // about:preferences#general
