@@ -61,6 +61,9 @@ user_pref("mousewheel.with_control.action", 1); // default: 3
 
 // Windowsの設定に関わらず常にダークモードにする
 user_pref("ui.systemUsesDarkTheme", 1);
+// DevToolsもダークモードにする
+user_pref("devtools.theme", "dark");
+
 
 // Disable ServiceWorker about:serviceworkersでunregisterしてから無効化
 user_pref("dom.serviceWorkers.enabled", false);
