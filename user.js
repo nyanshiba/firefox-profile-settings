@@ -64,6 +64,9 @@ user_pref("ui.systemUsesDarkTheme", 1);
 // DevToolsもダークモードにする
 user_pref("devtools.theme", "dark");
 
+// DevToolsでCanIUse
+user_pref("devtools.inspector.compatibility.enabled", true); // default: false
+
 // ServiceWorkerはTwitter生活に必要 about:serviceworkersで確認
 user_pref("dom.serviceWorkers.enabled", true); // default: true
 // https://github.com/arkenfox/user.js 2710: enable state partitioning of service workers [FF96+]
