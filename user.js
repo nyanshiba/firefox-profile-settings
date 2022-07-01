@@ -143,6 +143,15 @@ user_pref("browser.tabs.loadBookmarksInTabs", true); // default: false
 user_pref("browser.urlbar.openintab", false); // default: false
 user_pref("browser.search.openintab", false); // default: false
 
+// Twitterのクエリパラメータを除去
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1706607
+user_pref("privacy.query_stripping.enabled", true); // default: false
+user_pref("privacy.query_stripping.enabled.pbmode", true); // default: false
+// https://groups.google.com/a/mozilla.org/g/dev-platform/c/1vOSas0ptVQ
+// https://wiki.mozilla.org/Security/Anti_tracking_policy
+// https://github.com/brave/brave-core/blob/master/browser/net/brave_site_hacks_network_delegate_helper.cc#L31-L58
+user_pref("privacy.query_stripping.strip_list", "s t"); // default: ""
+
 // Firefox Options
 // about:preferences#general
 // タブをCtrl - Shift - Tabで切り替えられない不具合の原因
