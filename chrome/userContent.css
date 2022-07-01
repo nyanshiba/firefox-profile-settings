@@ -207,3 +207,10 @@ code {
         background: #232222
     }
 }
+
+/*WLX 見える化ツール SSIDを隠す */
+@-moz-document url-prefix("http://192.168.100.21/") {
+    .ssid_tag {
+        visibility: hidden !important;
+    }
+}
