@@ -133,11 +133,10 @@ user_pref("pdfjs.externalLinkTarget", 2); // default: 0
 
 // Firefox Options
 // about:preferences#general
-user_pref("browser.ctrlTab.recentlyUsedOrder", false);
-user_pref("browser.display.use_document_fonts", 1); // userContent.cssを優先する
-user_pref("font.name.monospace.ja", "Consolas");
-user_pref("font.name.sans-serif.ja", "BIZ UDPゴシック");
-user_pref("font.name.serif.ja", "BIZ UDP明朝");
+// タブをCtrl - Shift - Tabで切り替えられない不具合の原因
+user_pref("browser.ctrlTab.recentlyUsedOrder", false); // default: undefined
+user_pref("browser.ctrlTab.sortByRecentlyUsed", false); // default: undefined
+
 user_pref("general.autoScroll", false);
 user_pref("general.smoothScroll", true);
 user_pref("network.trr.mode", 5);
