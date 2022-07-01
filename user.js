@@ -282,6 +282,8 @@ user_pref("browser.urlbar.suggest.searches", false);
 user_pref("browser.urlbar.suggest.topsites", true);
 user_pref("browser.urlbar.quicksuggest.sponsoredIndex", -1);
 user_pref("browser.urlbar.sponsoredTopSites", false);
+// アドレスバーのURLコピー時にURLデコードする
+user_pref("browser.urlbar.decodeURLsOnCopy", true); // default: false
 
 user_pref("media.autoplay.default", 5);
 // https://developer.mozilla.org/ja/docs/Web/Media/Autoplay_guide
