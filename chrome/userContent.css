@@ -112,6 +112,18 @@ code {
     }
 }
 
+/* Oura Dashboard */
+@-moz-document domain(cloud.ouraring.com) {
+    /* Trendの項目の見切れを軽減 */
+    .css-1olvldc {
+        width: auto !important;
+    }
+    /* Trendの表示領域を広げる */
+    .css-1ih0y3u {
+        padding: 0 !important;
+    }
+}
+
 /* *.ovice.in マイクの催促を隠す */
 @-moz-document domain(ovice.in) {
     #micPermissionModal {
