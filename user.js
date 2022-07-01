@@ -131,6 +131,12 @@ user_pref("pdfjs.disablefontface", true); // default: false
 user_pref("pdfjs.textLayerMode", 2); // default: 1
 user_pref("pdfjs.externalLinkTarget", 2); // default: 0
 
+// open in new tab when use search box Ctrl - Kをデフォルトにする代わり
+// Alt - Enterで新規タブを開けばよい
+// https://support.mozilla.org/ja/questions/1308485
+user_pref("browser.urlbar.openintab", false); // default: false
+user_pref("browser.search.openintab", false); // default: false
+
 // Firefox Options
 // about:preferences#general
 // タブをCtrl - Shift - Tabで切り替えられない不具合の原因
@@ -150,7 +156,11 @@ user_pref("browser.newtabpage.enabled", false);
 user_pref("browser.startup.homepage", "about:blank");
 
 // about:preferences#search
-user_pref("browser.urlbar.matchBuckets", "general:5,suggestion:Infinity");
+user_pref("browser.search.widget.inNavBar", false);
+user_pref("browser.search.suggest.enabled", true);
+user_pref("browser.search.suggest.enabled.private", false);
+user_pref("browser.search.separatePrivateDefault", true);
+user_pref("browser.search.separatePrivateDefault.ui.enabled", true);
 
 // about:preferences#privacy
 // https://hg.mozilla.org/mozilla-central/file/tip/browser/components/preferences/tests/browser_contentblocking.js
@@ -250,6 +260,24 @@ user_pref("privacy.clearOnShutdown.offlineApps", false); // ウェブサイト�
 user_pref("privacy.clearOnShutdown.sessions", true); // セッション(ログイン状態はCookie)
 user_pref("privacy.clearOnShutdown.siteSettings", false); // サイトの設定
 
+// アドレスバー
+user_pref("browser.urlbar.autoFill", false);
+user_pref("keyword.enabled", false);
+// https://github.com/arkenfox/user.js
+ /*** [SECTION 0800]: LOCATION BAR / SEARCH BAR / SUGGESTIONS / HISTORY / FORMS ***/
+ user_pref("browser.urlbar.trimURLs", false); // default: true
+
+user_pref("browser.fixup.alternate.enabled", false); // default: true
+user_pref("browser.fixup.alternate.prefix", ""); // default: www.
+user_pref("browser.fixup.alternate.protocol", ""); // default: https
+user_pref("browser.fixup.alternate.suffix", ""); // default: .com
+
+user_pref("browser.urlbar.suggest.bookmark", true);
+user_pref("browser.urlbar.suggest.calculator", true);
+user_pref("browser.urlbar.suggest.engines", false);
+user_pref("browser.urlbar.suggest.history", false);
+user_pref("browser.urlbar.suggest.openpage", true);
+user_pref("browser.urlbar.suggest.searches", false);
 user_pref("media.autoplay.default", 5);
 // https://developer.mozilla.org/ja/docs/Web/Media/Autoplay_guide
 user_pref("media.autoplay.allow-extension-background-pages", false); // default: false
