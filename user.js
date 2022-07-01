@@ -276,10 +276,18 @@ user_pref("security.OCSP.require", false); // default: false
 user_pref("security.pki.crlite_mode", 2); // default: 1
 
 // HTTPS-Only Mode
-//user_pref("dom.security.https_only_mode", false); // default: false
+user_pref("dom.security.https_only_mode", true); // default: false
 user_pref("dom.security.https_only_mode_pbm", true); // default: false
-// block mixed content
+// https://hg.mozilla.org/mozilla-central/file/tip/modules/libpref/init/StaticPrefList.yaml#l3336
+user_pref("dom.security.https_only_fire_http_request_background_timer_ms", 1000); // default: 3000
+// https://hg.mozilla.org/mozilla-central/file/tip/modules/libpref/init/StaticPrefList.yaml#l3387
+user_pref("dom.security.https_only_mode_error_page_user_suggestions", true); // default: false
+// Mixed Contentを拒否・httpsに書き換えを試みる
 user_pref("dom.block_download_insecure", true); // default: true
+user_pref("security.mixed_content.block_active_content", true); // default: true
+user_pref("security.mixed_content.block_display_content", true); // default: false
+user_pref("security.mixed_content.block_object_subrequest", true); // default: false
+user_pref("security.mixed_content.upgrade_display_content", true); // default: false
 // HTTPS-First Mode https://blog.mozilla.org/security/2021/08/10/firefox-91-introduces-https-by-default-in-private-browsing/
 user_pref("dom.security.https_first", true); // default: false
 user_pref("dom.security.https_first_pbm", true); // default: true 
