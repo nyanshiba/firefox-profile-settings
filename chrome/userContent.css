@@ -24,6 +24,42 @@ code {
     }
 }
 
+@-moz-document domain(twitter.com) {
+    /* Twitterの幅を広げる */
+    .r-rthrr5 {
+        width: 1150px !important; /* 990px */
+    }
+    .r-1ye8kvj {
+        max-width: 760px !important; /* 600px */
+    }
+    /* WCAG */
+    .r-1ny4l3l .r-18u37iz .r-16y2uox .r-1wbh5a2 .r-1tl8opc {
+        line-height: 1.8 !important;
+    }
+    /* hide trends */
+    div[aria-label="タイムライン: トレンド"] > div > div:nth-child(n+4) {
+        visibility: hidden;
+    }
+    /* sensitive content */
+    .r-drfeu3,
+    .r-yfv4eo {
+      filter: none !important;
+      background-color: transparent !important;
+    }
+    
+    /* Spaces Caption*/
+    .r-vmopo1 {
+        height: 300px !important;
+    }
+    .r-im4jzf {
+        height: calc(64px + env(safe-area-inset-bottom)) !important;
+    }
+    .r-7e3msg {
+        margin-bottom: 10px !important;
+        width: 500px !important;
+    }
+}
+
 /* Discord デスクトップ版を勧めるバナーを隠す */
 @-moz-document domain(discord.com) { 
     .notice-3bPHh-,
