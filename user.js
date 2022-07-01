@@ -117,6 +117,20 @@ user_pref("network.dns.httpssvc.http3_fast_fallback_timeout", 5) // default: 50
 //user_pref("security.tls.version.min", 3) // default: 3 無視される
 user_pref("security.tls.enable_post_handshake_auth", true) // default: false
 
+
+// Disable Javascript on PDF files
+user_pref("pdfjs.enableScripting", false); // default: true
+
+// FirefoxのPDFビューワ(PDF.js)でPDFを横スクロール表示
+// https://qiita.com/maechi/items/d6bbac331a9dd6e6a2de#pdfjspdfjs-22228の修正
+// https://github.com/mozilla/pdf.js/blob/master/extensions/chromium/preferences_schema.json
+user_pref("pdfjs.scrollModeOnLoad", 1); // default: -1
+user_pref("pdfjs.spreadModeOnLoad", 1); // default: -1
+user_pref("pdfjs.defaultZoomValue", "page-actual"); // default: ""
+user_pref("pdfjs.disablefontface", true); // default: false
+user_pref("pdfjs.textLayerMode", 2); // default: 1
+user_pref("pdfjs.externalLinkTarget", 2); // default: 0
+
 // Firefox Options
 // about:preferences#general
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
