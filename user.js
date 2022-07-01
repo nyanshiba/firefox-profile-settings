@@ -192,12 +192,41 @@ user_pref("browser.contentblocking.category", "strict"); // default: (empty)
 // https://github.com/arkenfox/user.js/issues/1051#issuecomment-768656662 move from FPI to dFPI · Issue #1051
 user_pref("privacy.partition.network_state", true); // default: true
 
+// https://github.com/arkenfox/user.js /* 2803: set third-party cookies to session-only
+user_pref("network.cookie.thirdparty.sessionOnly", true); // default: false
+
+// Annotate trackers using the strict list. If set to false, the basic list will be used instead.
+user_pref("privacy.annotate_channels.strict_list.enabled", true); // default: @IS_EARLY_BETA_OR_EARLIER@
+
+// Storage Access APIは自動で行わずプロンプトを起動(調査) https://developer.mozilla.org/ja/docs/Web/API/Document/requestStorageAccess
+user_pref("dom.storage_access.auto_grants", false); // default: true
+//user_pref("dom.storage_access.enabled", true); // default: true
+
+// TCP, Total Cookie Protection (cookie jar)
+// https://blog.mozilla.org/en/products/firefox/firefox-rolls-out-total-cookie-protection-by-default-to-all-users-worldwide/
+// https://hg.mozilla.org/mozilla-central/rev/269b4d7154ecb808f710ff0a2cc625be41242bd1
+// https://hg.mozilla.org/mozilla-central/file/tip/browser/components/BrowserGlue.jsm#l1771
+user_pref("privacy.restrict3rdpartystorage.rollout.preferences.TCPToggleInStandard", true); // default: false
+user_pref("privacy.restrict3rdpartystorage.rollout.enabledByDefault", true); // default: false
+user_pref("browser.privacySegmentation.enabled", true); // default: false
+user_pref("browser.privacySegmentation.preferences.show", true); // default: false
+
 // https://hacks.mozilla.org/2020/08/changes-to-samesite-cookie-behavior/
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite
 // SameSite=Lax by default
-user_pref("network.cookie.sameSite.laxByDefault", true); // default: false
+user_pref("network.cookie.sameSite.laxByDefault", true); // default: @IS_EARLY_BETA_OR_EARLIER@
 // SameSite=None; Secure
-user_pref("network.cookie.sameSite.noneRequiresSecure", true); // default: false
+user_pref("network.cookie.sameSite.noneRequiresSecure", true); // default: @IS_EARLY_BETA_OR_EARLIER@
+// Schemeful Same-Site
+user_pref("network.cookie.sameSite.schemeful", true); // default: @IS_EARLY_BETA_OR_EARLIER@
+
+// https://hg.mozilla.org/mozilla-central/file/tip/modules/libpref/init/all.js#l1900
+//user_pref("network.cookie.maxNumber", 3000); // default: 3000
+// https://hg.mozilla.org/mozilla-central/file/tip/modules/libpref/init/StaticPrefList.yaml#l11385
+//user_pref("privacy.documentCookies.maxage", 0); // default: 0
+
+// https://hg.mozilla.org/mozilla-central/file/tip/modules/libpref/init/StaticPrefList.yaml#l9786
+user_pref("network.cookie.lifetimePolicy", 0); // default: 0, 2: as sessionOnly
 
 user_pref("privacy.donottrackheader.enabled", false); // 既知のトラッカーをブロックする設定時のみ 逆に追跡されるのを避けて完全に無効化したい人はChromeを使うべし
 
