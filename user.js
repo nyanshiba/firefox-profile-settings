@@ -153,7 +153,10 @@ user_pref("privacy.userContext.newTabContainerOnLeftClick.enabled", true);
 
 // about:preferences#home
 user_pref("browser.newtabpage.enabled", false);
+user_pref("browser.newtab.preload", false); // default: true
 user_pref("browser.startup.homepage", "about:blank");
+// https://wiki.mozilla.org/Tiles
+user_pref("browser.topsites.contile.enabled", false); // default: true
 
 // about:preferences#search
 user_pref("browser.search.widget.inNavBar", false);
