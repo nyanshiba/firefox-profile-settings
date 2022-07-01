@@ -278,6 +278,11 @@ user_pref("browser.urlbar.suggest.engines", false);
 user_pref("browser.urlbar.suggest.history", false);
 user_pref("browser.urlbar.suggest.openpage", true);
 user_pref("browser.urlbar.suggest.searches", false);
+// アドレスバーに広告を表示しない
+user_pref("browser.urlbar.suggest.topsites", true);
+user_pref("browser.urlbar.quicksuggest.sponsoredIndex", -1);
+user_pref("browser.urlbar.sponsoredTopSites", false);
+
 user_pref("media.autoplay.default", 5);
 // https://developer.mozilla.org/ja/docs/Web/Media/Autoplay_guide
 user_pref("media.autoplay.allow-extension-background-pages", false); // default: false
