@@ -121,6 +121,19 @@ code {
     }
 }
 
+/* DeepL GDPRバナーを隠す, word-breakによる訳文はみ出しを直す */
+@-moz-document domain(www.deepl.com) {
+    #dl_cookieBanner {
+        display: none !important;
+    }
+    .lmt--web .lmt__textarea_container {
+        padding-bottom: 140px !important;
+    }
+    .lmt--web .lmt__textarea {
+        min-height: 120% !important;
+    }
+}
+
 /* Oura Dashboard */
 @-moz-document domain(cloud.ouraring.com) {
     /* Trendの項目の見切れを軽減 */
