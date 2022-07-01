@@ -112,6 +112,15 @@ code {
     }
 }
 
+/* *.nature.com GDPRバナーを隠す */
+@-moz-document domain(nature.com), domain(biomedcentral.com) {
+    .c-ad,
+    .cc-banner,
+    .c-site-messages {
+        display: none !important;
+    }
+}
+
 /* Oura Dashboard */
 @-moz-document domain(cloud.ouraring.com) {
     /* Trendの項目の見切れを軽減 */
