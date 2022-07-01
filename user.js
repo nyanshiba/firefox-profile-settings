@@ -143,6 +143,14 @@ user_pref("browser.tabs.loadBookmarksInTabs", true); // default: false
 user_pref("browser.urlbar.openintab", false); // default: false
 user_pref("browser.search.openintab", false); // default: false
 
+// ディスクキャッシュの無効化
+user_pref("browser.cache.offline.enable", false); // default: @IS_NOT_EARLY_BETA_OR_EARLIER@
+user_pref("browser.cache.disk.enable", false); // default: true
+//user_pref("browser.cache.memory.enable", true); // default: true
+// https://kb.mozillazine.org/Browser.cache.memory.capacity
+// https://kanasys.com/tech/892
+//user_pref("browser.cache.memory.capacity", -1);
+
 // Twitterのクエリパラメータを除去
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1706607
 user_pref("privacy.query_stripping.enabled", true); // default: false
