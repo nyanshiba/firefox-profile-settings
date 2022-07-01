@@ -131,6 +131,9 @@ user_pref("pdfjs.disablefontface", true); // default: false
 user_pref("pdfjs.textLayerMode", 2); // default: 1
 user_pref("pdfjs.externalLinkTarget", 2); // default: 0
 
+// open new tab right of current
+user_pref("browser.tabs.insertAfterCurrent", true); // default: false
+
 // open bookmark in new tab
 user_pref("browser.tabs.loadBookmarksInTabs", true); // default: false
 
