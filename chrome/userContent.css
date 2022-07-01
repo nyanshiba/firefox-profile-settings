@@ -149,3 +149,27 @@ code {
         display: none !important;
     }
 }
+@-moz-document domain(opendns.com) {
+    #top-bar-container * {
+        color: #424549 !important;
+    }
+    #navigation-select,
+    .inner h2 {
+        background: #2c3034 !important;
+    }
+    .center.slim b {
+        background: #4c555a !important;
+    }
+    .logo-ip p #userIP {
+        background: #818789 !important;
+    }      
+}
+
+@-moz-document domain(login.tailscale.com) {
+    .tb td > div > div > div span {
+        background: rgb(68 67 66/var(--tw-text-opacity))
+    }
+    #app-root header div h1 {
+        background: #232222
+    }
+}
