@@ -131,6 +131,9 @@ user_pref("pdfjs.disablefontface", true); // default: false
 user_pref("pdfjs.textLayerMode", 2); // default: 1
 user_pref("pdfjs.externalLinkTarget", 2); // default: 0
 
+// open bookmark in new tab
+user_pref("browser.tabs.loadBookmarksInTabs", true); // default: false
+
 // open in new tab when use search box Ctrl - Kをデフォルトにする代わり
 // Alt - Enterで新規タブを開けばよい
 // https://support.mozilla.org/ja/questions/1308485
