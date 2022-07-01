@@ -291,6 +291,8 @@ user_pref("media.autoplay.allow-extension-background-pages", false); // default:
 user_pref("media.autoplay.block-webaudio", true); // default: false
 user_pref("media.autoplay.block-event.enabled", true); // default: false
 //user_pref("media.block-autoplay-until-in-foreground", true); // default: true
+user_pref("media.getusermedia.screensharing.enabled", false); // default: true
+user_pref("canvas.capturestream.enabled", false); // default: true
 user_pref("permissions.default.camera", 2);
 user_pref("permissions.default.desktop-notification", 2);
 user_pref("permissions.default.geo", 2);
