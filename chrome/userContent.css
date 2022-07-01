@@ -119,6 +119,13 @@ code {
     }
 }
 
+/* IPinfo.io ポップアップを隠す */
+@-moz-document domain(ipinfo.io) {
+    .ipinfo-modal {
+        display: none !important;
+    }
+}
+
 /* IPアドレスを隠す */
 @-moz-document domain(fast.com) {
     .test-info-group {
