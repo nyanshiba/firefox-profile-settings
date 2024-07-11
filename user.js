@@ -169,6 +169,41 @@ user_pref("browser.link.open_newwindow", 3); // default: 3
 user_pref("browser.link.open_newwindow.restriction", 3); // default: 2
 user_pref("browser.link.open_newwindow.override.external", 3); // default: -1
 
+// フォント
+user_pref("font.default.x-unicode", "sans-serif");
+user_pref("font.language.group", "ja");
+//user_pref("font.name-list.cursive.x-unicode", "Comic Sans MS"); // default: "Comic Sans MS"
+user_pref("font.name-list.monospace.x-unicode", "Consolas-BIZUDPGothic"); // default: "Courier New"
+user_pref("font.name-list.monospace.ja", "Consolas-BIZUDPGothic"); // default: "MS Gothic, MS Mincho, Meiryo, Yu Gothic, Yu Mincho, MS PGothic, MS PMincho"
+user_pref("font.name-list.monospace.x-western", "Consolas-BIZUDPGothic"); // default: "Courier New"
+user_pref("font.name-list.sans-serif.x-unicode", "VerdanaPro-BIZUDPGothic"); // default: "Arial"
+user_pref("font.name-list.sans-serif.ja", "VerdanaPro-BIZUDPGothic"); // default: "Meiryo, Yu Gothic, MS PGothic, MS Gothic, Yu Mincho, MS PMincho, MS Mincho"
+user_pref("font.name-list.sans-serif.x-western", "VerdanaPro-BIZUDPGothic"); // default: "Arial"
+user_pref("font.name-list.serif.ja", "GeorgiaPro-BIZUDPMincho"); // default: "Yu Mincho, MS PMincho, MS Mincho, Meiryo, Yu Gothic, MS PGothic, MS Gothic"
+user_pref("font.name-list.serif.x-unicode", "GeorgiaPro-BIZUDPMincho"); // default: "Times New Roman"
+user_pref("font.name-list.serif.x-western", "GeorgiaPro-BIZUDPMincho");
+// WebページやuserContent.cssのフォントを優先しない
+user_pref("browser.display.use_document_fonts", 0);
+// アイコンフォントの除外 material.io
+user_pref("browser.display.use_document_fonts.icon_font_allowlist", "Material Icons, Material Icons Extended, Material Icons Outlined, Material Icons Round, Material Icons Sharp, Material Icons Two Tone, Google Material Icons, Google Material Icons Filled, Material Symbols Outlined, Material Symbols Round, Material Symbols Rounded, Material Symbols Sharp, Google Symbols");
+// Firefox 118のpbmode, 119で日本語フォントが使えない
+// https://www.reddit.com/r/firefox/comments/16thnb3/font_fingerprinting_protection_in_firefox_118s/
+user_pref("privacy.fingerprintingProtection.overrides", "-FontVisibilityLangPack"); // default: ""
+
+// about:reader https://hg.mozilla.org/mozilla-central/file/tip/modules/libpref/init/all.js#l3960
+user_pref("reader.parse-on-load.enabled", true); // default: true // user reader
+user_pref("reader.font_size", 4); // default: 5
+user_pref("reader.content_width", 9); // default: 3
+user_pref("reader.line_height", 5); // default: 4
+//user_pref("reader.color_scheme", "auto"); // default: auto
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1594828
+user_pref("reader.improvements_H12022.enabled", true); // default: false
+user_pref("reader.font_type", "sans-serif"); // default: serif
+user_pref("reader.toolbar.vertical", false); // default: true
+
+// ページの表示言語
+user_pref("intl.accept_languages", "ja, en-US, en"); // default: en-US, en
+
 user_pref("network.trr.mode", 5);
 
 // about:preferences#containers
