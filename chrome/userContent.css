@@ -24,27 +24,55 @@ code {
     }
 }
 
-@-moz-document domain(twitter.com) {
+@-moz-document domain(x.com), domain(twitter.com) {
     /* Twitterの幅を広げる */
     .r-rthrr5 {
-        width: 1150px !important; /* 990px */
+        width: 1150px !important; /* default: 990px */
     }
     .r-1ye8kvj {
-        max-width: 760px !important; /* 600px */
+        max-width: 760px !important; /* default: 600px */
     }
+
     /* WCAG */
-    .r-1ny4l3l .r-18u37iz .r-16y2uox .r-1wbh5a2 .r-1tl8opc {
-        line-height: 1.8 !important;
+    .r-16dba41 span.r-1tl8opc {
+        line-height: 1.7 !important;
     }
+
     /* hide trends */
-    div[aria-label="タイムライン: トレンド"] > div > div:nth-child(n+4) {
+    .r-1pi2tsx section .r-1adg3ll:nth-child(n+5) {
         visibility: hidden;
     }
-    /* sensitive content */
-    .r-drfeu3,
+    
+    /* コンテンツ設定に関係なくsensitive contentを表示 */
     .r-yfv4eo {
       filter: none !important;
+    }
+    .r-drfeu3 {
       background-color: transparent !important;
+    }
+    .r-edyy15,
+    .r-1kihuf0.r-3o4zer {
+        display: none !important;
+    } 
+
+    /* Tabフォーカスを分かりやすくする */
+    .r-1cvl2hr {
+        margin: auto;
+    }
+    a,
+    input {
+        border-bottom: none !important;
+        border: none !important;
+        border-radius: 4px;
+    }
+    a:focus,
+    a:hover,
+    input:focus,
+    input:hover,
+    .r-1cvl2hr:focus,
+    .r-1cvl2hr:hover {
+        border-bottom: none !important;
+        outline: 4px solid rgb(142, 205, 248) !important;
     }
     
     /* Spaces Caption*/
