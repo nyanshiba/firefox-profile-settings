@@ -163,11 +163,12 @@ user_pref("privacy.query_stripping.strip_list", "s t"); // default: ""
 // Firefox Options
 // about:preferences#general
 // タブをCtrl - Shift - Tabで切り替えられない不具合の原因
-user_pref("browser.ctrlTab.recentlyUsedOrder", false); // default: undefined
-user_pref("browser.ctrlTab.sortByRecentlyUsed", false); // default: undefined
+user_pref("browser.ctrlTab.sortByRecentlyUsed", false); // default: false
+// ウィンドウではなく新しいタブで開く https://kb.mozillazine.org/Browser.link.open_newwindow
+user_pref("browser.link.open_newwindow", 3); // default: 3
+user_pref("browser.link.open_newwindow.restriction", 3); // default: 2
+user_pref("browser.link.open_newwindow.override.external", 3); // default: -1
 
-user_pref("general.autoScroll", false);
-user_pref("general.smoothScroll", true);
 user_pref("network.trr.mode", 5);
 
 // about:preferences#containers
@@ -176,8 +177,10 @@ user_pref("privacy.userContext.newTabContainerOnLeftClick.enabled", true);
 
 // about:preferences#home
 user_pref("browser.newtabpage.enabled", false);
+// Recommended by Pocketを抑制
+user_pref("browser.newtabpage.activity-stream.discoverystream.enabled", false); // default: true
 user_pref("browser.newtab.preload", false); // default: true
-user_pref("browser.startup.homepage", "about:blank");
+user_pref("browser.startup.homepage", "about:firefoxview");
 // https://wiki.mozilla.org/Tiles
 user_pref("browser.topsites.contile.enabled", false); // default: true
 
