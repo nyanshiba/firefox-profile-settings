@@ -1,6 +1,13 @@
 /* WebおよびuserContent.cssのフォントを優先しない browser.display.use_document_fonts: 0 とき、欧文・和文フォントにはアイコンフォントが含まれていないため、アイコンが文字化けする  */
 /* Firefox 111以降、user.jsでアイコンフォントの除外 browser.display.use_document_fonts.icon_font_allowlist が設定できる https://hg.mozilla.org/mozilla-central/file/tip/modules/libpref/init/StaticPrefList.yaml#l1400 */
 
+/* pdf.js PDFの輝度を下げる */
+.textLayer {
+    opacity: 0.35 !important;
+    background: black;
+}
+
+
 /* https://superuser.com/questions/318912/how-can-i-override-the-css-of-a-site-in-firefox-with-usercontent-css */
 /* YouTube banner ads */
 @-moz-document domain(youtube.com) {
