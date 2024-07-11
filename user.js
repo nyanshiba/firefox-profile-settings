@@ -286,6 +286,13 @@ user_pref("privacy.clearOnShutdown.offlineApps", false); // ウェブサイト�
 user_pref("privacy.clearOnShutdown.sessions", true); // セッション(ログイン状態はCookie)
 user_pref("privacy.clearOnShutdown.siteSettings", false); // サイトの設定
 
+// 前回開いていたタブのブラウザバック情報は不要 https://github.com/nyanshiba/AutoBackupWSL/commit/08d3480ffa7c8ed080fc08ae0dcc57fc8cc35bb8
+// Firefox/session restore - MozillaWiki https://wiki.mozilla.org/Firefox/session_restore#Browser_settings
+user_pref("browser.sessionstore.max_serialize_back", 0); // default: 10
+user_pref("browser.sessionstore.max_serialize_forward", 0); // default: -1
+user_pref("browser.sessionstore.max_tabs_undo", 5); // default: 25
+user_pref("browser.sessionstore.max_windows_undo", 2); // default: 3
+
 // アドレスバー
 user_pref("browser.urlbar.autoFill", false);
 user_pref("keyword.enabled", false);
