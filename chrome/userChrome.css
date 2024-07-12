@@ -1,77 +1,126 @@
-/* ブックマークツールバーの長さ制限 */
-#personal-bookmarks {
-    max-width: 35vw;
+/* とても重いタブ一覧 browser.tabs.tabmanager.enabled: false では無効にならない */
+#alltabs-button,
+/* タブ前後のスペーサー */
+.titlebar-spacer,
+/* 拡張機能 */
+#unified-extensions-button,
+/* タブを閉じるボタン */
+.tab-close-button {
+    display: none;
 }
 
-/* タブスクロールを最小限に、マウスオーバー・選択・再生時はタブを展開 https://www.reddit.com/r/firefox/comments/b3slhs/why_is_there_absolutely_no_possible_way_to/ */
-#tabbrowser-tabs {
-    --tab-min-width: 180px !important;
-}
-.tabbrowser-tab:not(:hover):not([selected], [soundplaying]) {
-    min-width: 20px !important;
-}
-:root {
-    --tab-min-height: 30px !important;
+/* タブタイトルを最大限表示 */
+.tab-label-container {
+    mask-image: none !important;
 }
 
-/* タブに色を付ける [pending] */
-.tabbrowser-tab[image] > .tab-stack > .tab-content[titlechanged] {
-    background-position-x: left 14px;
-}
-.tab-content[titlechanged] {
-    background-image: radial-gradient(circle, var(--panel-banner-item-warning-icon-bgcolor), var(--panel-banner-item-warning-icon-bgcolor) 2px, transparent 2px);
-}
-.tabbrowser-tab[soundplaying] > .tab-stack > .tab-content {
-    background-position-x: left 14px !important;
-    background-image: radial-gradient(circle, var(--input-error-border-color), var(--input-error-border-color) 2px, transparent 2px);
-}
-.tab-content[titlechanged],
-.tabbrowser-tab[soundplaying] > .tab-stack > .tab-content {
-    background-position: center bottom calc(6.5px + var(--tabs-navbar-shadow-size));
-    background-size: 4px 4px;
-    background-repeat: no-repeat;
+/* 非アクティブなタブのファビコンを暗く */
+.tabbrowser-tab[pending] {
+    filter: opacity(.7);
 }
 
-/* タブの数をカウントする */
+/* VivaldiのTwo-Level Tab Stacksをリスペクトしつつ、スクロール機能を壊さない変更に留める */
+.tabbrowser-tab {
+    margin-right: -76px !important;
+    margin-bottom: var(--tab-min-height) !important;
+    overflow: visible !important;
+    min-width: 152px !important;
+    max-width: 152px !important;
+}
+/* 下段 */
+.tabbrowser-tab:nth-of-type(2n) {
+    margin-top: var(--tab-min-height) !important;
+    margin-bottom: 0 !important;
+}
+
+/* Two-Level Tabで見栄えするように、ボーダーラインを中央だけに表示する .tabbrowser-tabには適用できなかった*/
+.tabbrowser-tab > .tab-stack {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-color: transparent;
+}
+.tabbrowser-tab:nth-of-type(2n) > .tab-stack {
+    border-bottom: none !important;
+}
+.tabbrowser-tab:nth-of-type(2n-1) > .tab-stack {
+    border-top: none !important;
+}
+.tab-background {
+    margin-block: 0 !important;
+}
+
+/* タブのタイトルを用いて、内容を色で示す */
+.tabbrowser-tab[label*="4k" i] > .tab-stack,
+.tabbrowser-tab[label*="8k" i] > .tab-stack {
+    border-color: goldenrod;
+}
+.tabbrowser-tab[label*="MV" i] > .tab-stack,
+.tabbrowser-tab[label*="PV" i] > .tab-stack,
+.tabbrowser-tab[label*="ver." i] > .tab-stack,
+.tabbrowser-tab[label*="feat" i] > .tab-stack,
+.tabbrowser-tab[label*="cover" i] > .tab-stack,
+.tabbrowser-tab[label*="歌"] > .tab-stack,
+.tabbrowser-tab[label*="カバー"] > .tab-stack {
+    border-color: slateblue;
+}
+/* 開いているタブを目立たせる */
+.tabbrowser-tab[selected] > .tab-stack {
+    z-index: 1;
+    border-color: var(--toolbar-color);
+}
+
+/* すべてのタブを数える */
 body {
-    counter-reset: activetabcounter alltabcounter;
+    counter-reset: beforetabcounter 0;
 }
-.tabbrowser-tab:not([pending=true]) {
-    counter-increment: activetabcounter;
+.tabbrowser-tab > .tab-stack {
+    counter-increment: beforetabcounter;
 }
-.tab-stack {
-    counter-increment: alltabcounter;
+/* 開いているタブ以降のタブを数える */
+.tabbrowser-tab[selected] {
+    counter-reset: aftertabcounter -1;
 }
+.tabbrowser-tab {
+    counter-increment: aftertabcounter;
+}
+/* 左右にタブが幾つあるかを、タブのスクロールボタン下に表示 */
+.tabbrowser-tab[selected]::before,
 .tabbrowser-tab:last-of-type::after {
     position: fixed;
-    right: 140px;
-    pointer-events: none;
-    margin-top: 4px;
-    padding: 2px 4px;
-    border-radius: 6px 6px 0 0;
+    display: block;
+    top: calc(var(--tab-min-height) * 1.5);
     font-size: 12px;
-    content: counter(alltabcounter) " (+" counter(activetabcounter) ")" !important;
-    color: var(--lwt-text-color);
-    background-color: var(--toolbar-bgcolor);
-    border: 4px solid var(--lwt-accent-color) !important; /* If you are using the old default theme: rgb(32,35,64) */
-    border-bottom: 3px solid var(--toolbar-bgcolor) !important;
-    opacity: 1 !important;
+    text-align: center !important;
+    pointer-events: none;
+    color: var(--toolbar-color);
 }
-.tabbrowser-tab:nth-child(n+100):last-of-type::after {
-    color: white;
-    background-color: rgba(255,0,0,.9);
-    border-bottom-color: rgba(255,0,0,.9) !important;
+.tabbrowser-tab[selected]::before {
+    left: 2px;
+    content: counter(beforetabcounter) !important;
 }
-.titlebar-spacer[type="post-tabs"] {
-    width: 60px!important;
+.tabbrowser-tab:last-of-type::after {
+    right: 140px;
+    content: counter(aftertabcounter) !important;
 }
-.private-browsing-indicator {
-    width: 36px;
-    padding-right: 100px!important;
-    /* #8000D7 */
+/* タブのスクロールボタンの位置調整 */
+#scrollbutton-up, 
+#scrollbutton-down {
+    margin: 10px 0 25px !important;
 }
 
-/* スペーサーを削除 */
-.titlebar-spacer[type="pre-tabs"] {
-    display: none;
+/* プライベートブラウズのロゴを退ける */
+#private-browsing-indicator-with-label {
+    position: fixed;
+    top: 6px;
+    right: 0;
+}
+
+/* user.jsのbrowser.uiCustomization.stateに沿うように、URLバーの長さを制限 */
+#urlbar-container {
+    width: 40vw !important;
+}
+
+/* ブックマークキーワード入力欄(タグではない)をCtrl - Dに追加 */
+#editBMPanel_keywordRow {
+    visibility: visible !important;
 }
