@@ -63,6 +63,14 @@
 .tabbrowser-tab[label*="カバー"] > .tab-stack {
     border-color: slateblue;
 }
+/* Container Tabs privacy.userContext.enabled に対応 */
+.tab-context-line {
+    display: none !important;
+}
+.tabbrowser-tab[usercontextid] > .tab-stack {
+    border-right: 2px solid;
+    border-color: var(--identity-icon-color);
+}
 /* 開いているタブを目立たせる */
 .tabbrowser-tab[selected] > .tab-stack {
     z-index: 1;
