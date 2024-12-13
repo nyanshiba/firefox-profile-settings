@@ -1,55 +1,47 @@
-/* とても重いタブ一覧 browser.tabs.tabmanager.enabled: false では無効にならない */
+/* browser.tabs.tabmanager */
 #alltabs-button,
 /* タブ前後のスペーサー */
 .titlebar-spacer,
 /* 拡張機能 */
 #unified-extensions-button,
-/* タブを閉じるボタン */
+/* タブを閉じる */
 .tab-close-button {
     display: none;
 }
 
-/* タブタイトルを最大限表示 */
-.tab-label-container {
-    mask-image: none !important;
-}
-
 /* 非アクティブなタブのファビコンを暗く */
 .tabbrowser-tab[pending] {
-    filter: opacity(.7);
+    color: light-dark(rgb(64, 64, 64), rgb(192, 192, 192)) !important;
 }
 
-/* VivaldiのTwo-Level Tab Stacksをリスペクトしつつ、スクロール機能を壊さない変更に留める */
+/* タブラベルを複数行で表示する */
 .tabbrowser-tab {
-    margin-right: -76px !important;
-    margin-bottom: var(--tab-min-height) !important;
-    overflow: visible !important;
-    min-width: 152px !important;
-    max-width: 152px !important;
+    height: calc(var(--tab-min-height)*2);
 }
-/* 下段 */
-.tabbrowser-tab:nth-of-type(2n) {
-    margin-top: var(--tab-min-height) !important;
-    margin-bottom: 0 !important;
+.tab-content {
+    padding: 0 0 0 var(--space-xsmall) !important;
 }
-
-/* Two-Level Tabで見栄えするように、ボーダーラインを中央だけに表示する .tabbrowser-tabには適用できなかった*/
-.tabbrowser-tab > .tab-stack {
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-    border-color: transparent;
+.tab-icon-stack {
+    z-index: 1;
+    position: absolute !important;
+    bottom: var(--tab-block-margin);
+    right: 0px;
 }
-.tabbrowser-tab:nth-of-type(2n) > .tab-stack {
-    border-bottom: none !important;
+.tab-label-container {
+    margin: auto;
 }
-.tabbrowser-tab:nth-of-type(2n-1) > .tab-stack {
-    border-top: none !important;
-}
-.tab-background {
-    margin-block: 0 !important;
+.tab-label {
+    white-space: normal !important;
+    line-height: 1.4 !important;
+    max-height: 4em;
 }
 
 /* タブのタイトルを用いて、内容を色で示す */
+.tabbrowser-tab > .tab-stack {
+    border-bottom: 2px solid;
+    border-color: transparent;
+}
+
 .tabbrowser-tab[label*="4k" i] > .tab-stack,
 .tabbrowser-tab[label*="8k" i] > .tab-stack {
     border-color: goldenrod;
@@ -67,53 +59,12 @@
 .tab-context-line {
     display: none !important;
 }
-.tabbrowser-tab[usercontextid] > .tab-stack {
-    border-right: 2px solid;
-    border-color: var(--identity-icon-color);
+.tabbrowser-tab[usercontextid] .tab-background {
+    background: linear-gradient(0deg, transparent 0%, var(--identity-icon-color) 100%);
 }
 /* 開いているタブを目立たせる */
 .tabbrowser-tab[selected] > .tab-stack {
-    z-index: 1;
     border-color: var(--toolbar-color);
-}
-
-/* すべてのタブを数える */
-body {
-    counter-reset: beforetabcounter 0;
-}
-.tabbrowser-tab > .tab-stack {
-    counter-increment: beforetabcounter;
-}
-/* 開いているタブ以降のタブを数える */
-.tabbrowser-tab[selected] {
-    counter-reset: aftertabcounter -1;
-}
-.tabbrowser-tab {
-    counter-increment: aftertabcounter;
-}
-/* 左右にタブが幾つあるかを、タブのスクロールボタン下に表示 */
-.tabbrowser-tab[selected]::before,
-.tabbrowser-tab:last-of-type::after {
-    position: fixed;
-    display: block;
-    top: calc(var(--tab-min-height) * 1.5);
-    font-size: 12px;
-    text-align: center !important;
-    pointer-events: none;
-    color: var(--toolbar-color);
-}
-.tabbrowser-tab[selected]::before {
-    left: 2px;
-    content: counter(beforetabcounter) !important;
-}
-.tabbrowser-tab:last-of-type::after {
-    right: 140px;
-    content: counter(aftertabcounter) !important;
-}
-/* タブのスクロールボタンの位置調整 */
-#scrollbutton-up, 
-#scrollbutton-down {
-    margin: 10px 0 25px !important;
 }
 
 /* プライベートブラウズのロゴを退ける */
