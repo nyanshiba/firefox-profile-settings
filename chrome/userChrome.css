@@ -67,6 +67,12 @@
     border-color: var(--toolbar-color);
 }
 
+/* ウィンドウ操作のため、タブのスクロールボタンの縮小 */
+#scrollbutton-up, 
+#scrollbutton-down {
+    margin: 10px 0 !important;
+}
+
 /* プライベートブラウズのロゴを退ける */
 #private-browsing-indicator-with-label {
     position: fixed;
