@@ -196,6 +196,9 @@
     }
 }
 @-moz-document domain(inonius.net) {
+    .select-all {
+        visibility: hidden;
+    }
     span#ip {
         background: #202020 !important;
     }
